@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    let html = '<div class="coffee">';
     // html += '' + coffee.id + '';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
@@ -11,27 +11,54 @@ function renderCoffee(coffee) {
 }
 
 function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    let html = '';
+    for(let i = 0; i <= coffees.length - 1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
-
+// coffee roast selection
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
+
+    if(selectedRoast !== 'all') {
+        coffees.forEach(function (coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    } else if (coffees.roast === " "){ // does it match the all? do this
+        tbody.innerHTML = renderCoffees(coffees); //show all coffee items
+    }
+}
+
+//coffee roast user input selection
+function updateInputCoffees(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+
+    let selectedRoast = inputSelection.value.toLowerCase();// standardize input selection
+    let filteredCoffees = []; //The bucket
+
+    coffees.forEach(function(coffee) { //
+        if(coffee.name.toLowerCase().match(selectedRoast) || coffee.roast.toLowerCase().match(selectedRoast)) {
             filteredCoffees.push(coffee);
+        } else if (coffees.roast === " "){
+            tbody.innerHTML = renderCoffees(coffees); //show all coffee items
+        }else {
+            // document.getElementById("error-message").innerHTML =  "Whoops, we could not find your roast"; //show error message
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -53,13 +80,24 @@ var coffees = [
 
 
 
-var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+let tbody = document.querySelector('#coffees');
+let submitButton = document.getElementById('roast-selection');
+let roastSelection = document.querySelector('#roast-selection');
+let inputSelection = document.getElementById('inputSelection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-roastSelection.addEventListener('click', updateCoffees)
+submitButton.addEventListener('change', updateCoffees)
 
-submitButton.addEventListener('click', updateCoffees);
+inputSelection.addEventListener('keyup', updateInputCoffees);
+
+
+
+
+
+
+
+
+
+
 

@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
+    var html = '<div class="coffee">';
+    html += '' + coffee.id + '';
+    html += '<h1>' + coffee.name + '</h1>';
+    html += '<p>' + coffee.roast + '</p>';
     html += '</tr>';
 
     return html;
@@ -55,3 +55,39 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+// function searchPlz () {
+//     if (selectedRoast = "light") {
+//         "Light City", "Half City", "Cinnamon"
+//     } else if (selectedRoast = "medium") {
+//         "City", "American", "Breakfast"
+//     } else {
+//         "High", "Continental", "New Orleans", "European", "Espresso", "Viennese", "Italian", "French"
+//     }
+//
+// }
+//
+// let lightRoasts = [
+//     {id: 1, name: 'Light City', roast: 'light'},
+//     {id: 2, name: 'Half City', roast: 'light'},
+//     {id: 3, name: 'Cinnamon', roast: 'light'}
+// ]
+//
+// let mediumRoasts = [
+//     {id: 4, name: 'City', roast: 'medium'},
+//     {id: 5, name: 'American', roast: 'medium'},
+//     {id: 6, name: 'Breakfast', roast: 'medium'}
+// ]
+//
+// let darkRoasts = [
+//     {id: 7, name: 'High', roast: 'dark'},
+//     {id: 8, name: 'Continental', roast: 'dark'},
+//     {id: 9, name: 'New Orleans', roast: 'dark'},
+//     {id: 10, name: 'European', roast: 'dark'},
+//     {id: 11, name: 'Espresso', roast: 'dark'},
+//     {id: 12, name: 'Viennese', roast: 'dark'},
+//     {id: 13, name: 'Italian', roast: 'dark'},
+//     {id: 14, name: 'French', roast: 'dark'}
+// ]

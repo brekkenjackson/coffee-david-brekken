@@ -18,6 +18,16 @@
     justify-content: center;
 }
 
+#subHeader {
+    display: flex;
+    background-color:lightskyblue;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: "American Typewriter", serif;
+    justify-content: center;
+}
+
 #btn\ container {
     display: flex;
     color: white;
@@ -73,3 +83,10 @@ body {
     padding: 0 5em;
 
 }
+
+#SocialMedia {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+}
+

@@ -90,3 +90,13 @@ body {
     padding: 1em;
 }
 
+.circle {
+    width: 280px;
+    height: 75px;
+    line-height: 75px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: lightskyblue;
+    text-align: center;
+    background: tan;
+}

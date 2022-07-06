@@ -1,7 +1,7 @@
 
 
 #mainContainer{
-    background-image: url(anastasiia-coffeebean.jpg);
+    background-image: url(img/anastasiia-coffeebean.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size:auto;
@@ -14,7 +14,7 @@
     color: white;
     text-align: center;
     font-weight: bold;
-    font-family: "American Typewriter";
+    font-family: "American Typewriter", serif;
     justify-content: center;
 }
 
@@ -47,7 +47,7 @@ body {
 
 
 
-}
+
 
 .footer {
     display: block;

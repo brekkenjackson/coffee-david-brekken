@@ -59,4 +59,17 @@ body {
 }
 
 
-Resources
+#forms {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+#roast-selection {
+    height: 100%;
+}
+
+#coffees {
+    padding: 0 5em;
+
+}

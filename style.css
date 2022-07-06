@@ -1,0 +1,62 @@
+
+
+#mainContainer{
+    background-image: url(anastasiia-coffeebean.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:auto;
+}
+
+#mainHeader {
+
+    display: flex;
+    background-color:lightskyblue;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: "American Typewriter";
+    justify-content: center;
+}
+
+#btn\ container {
+    display: flex;
+    color: white;
+    width: 100%;
+}
+
+#btnSubmit {
+    padding-bottom:15px;
+    /*background-color: mintcream;*/
+    /*color: darkblue;*/
+}
+
+body {
+    margin:0;
+    padding-top: 10px;
+    background-color:#C4A484 ;
+
+
+}
+
+
+
+
+.coffee {
+    color: thistle;
+}
+
+
+
+}
+
+.footer {
+    display: block;
+    background-color: cadetblue;
+    color: aliceblue;
+    padding: 0;
+    margin:0;
+
+}
+
+
+Resources
